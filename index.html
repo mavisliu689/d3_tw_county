@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="https://d3js.org/topojson.v2.min.js"></script>
     </head>
@@ -8,12 +9,37 @@
         <style>
             path {
                 fill: rgb(60, 168, 195);
+                cursor: pointer;
             }
             path:hover{
-                 fill:rgb(214, 93, 93);
+                 fill: rgb(214, 93, 93);
+                 fill-opacity: .7;
+            }
+            .selected {
+                fill: rgb(214, 93, 93);
+            }
+            .hidden {
+                 display: none;
+             }
+            div.tooltip {
+                position: absolute;
+                text-align: center;
+                width: 60px;
+                height: 28px;
+                padding: 3px;
+                font-weight: bold;
+                font: 16px sans-serif;
+                background: white;
+                border: 0px;
+                border-radius: 8px;
+                pointer-events: none;
+                color: rgb(46, 44, 44);
+                opacity: 0.9;
             }
         </style>
-        <svg width="960" height="600"></svg>
+        <div id="map">
+            <svg width="960" height="600"></svg>
+        </div>
 
         <script src="index.js"></script>
     </body>
